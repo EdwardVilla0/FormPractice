@@ -1,9 +1,12 @@
-import React from 'react'
+import React from 'react';
+import './Home.styles.css';
 
 function Home() {
     return (
-        <div>
-            testing
+        <div className="home">
+            <div class="home__form">
+
+            </div>
         </div>
     )
 }

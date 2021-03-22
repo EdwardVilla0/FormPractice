@@ -1,0 +1,6 @@
+.home__form {
+    height: 100vh; /* Magic here */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
