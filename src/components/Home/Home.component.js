@@ -4,7 +4,11 @@ import './Home.styles.css'
 
 const useStyle = makeStyles(theme => ({
     root: {
+        '& .MuiFormControl-root': {
+            width: '500px',
+            margin: theme.spacing(1),
 
+        }
     }
 }))
 
@@ -22,25 +26,39 @@ const initialValues = {
 
 function Home() {
     const [values, setValues] = useState(initialValues);
-    const classes = useStyle()
+    const classes = useStyle();
+    const handleFullname = e => {
+        const { name, value } = e.target
+        setValues({
+            ...values,
+            [name]: value
+        })
+    }
     return (
         <div className="home">
             <form className={classes.root}>
+
                 <Grid container>
-                    <Grid item xs={6}>
+                    <Grid item xs={6} className="home__row1">
                         <TextField
                             variant="outlined"
                             label="Full Name"
+                            name='fullname'
                             value={values.fullname}
+                            className="home__row1__input"
+                            onChange={handleFullname}
                         />
                         <TextField
                             variant="outlined"
-                            label="email"
+                            label="Email"
+                            name="email"
                             value={values.email}
+                            className="home__row1__input"
                         />
                     </Grid>
-                    <Grid item xs={6}></Grid>
+
                 </Grid>
+
             </form>
         </div>
     )
