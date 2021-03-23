@@ -4,12 +4,14 @@
     justify-content: center;
     align-items: center;
     flex-direction: column;
+    background-image: url("");
   }
 
   .home__row1{
       display: flex;
       justify-content: space-evenly;
   }
+
 
   .home__row2{
       display: flex;
